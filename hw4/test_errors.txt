@@ -1,0 +1,45 @@
+{ 1 2 + }
+5
++
+print
+5
+{ 1 2 + }
++
+print
+not
+dup
+exec
+file
+if
+5
+5
+if
+#t
+{ 1 2 + }
+5
+if
+#f
+5
+{ 1 2 + }
+if
+print
+{ 1 2 + }
+5
+<
+swap
+#t
+4
+4
+if
+4
+exec
+4
+file
+{ 1 2 + }
+file
+{ 1 2 { 1 2 { 1 2 { 1 2 } } } }
+file
+make
+hello
+quit
+quit
