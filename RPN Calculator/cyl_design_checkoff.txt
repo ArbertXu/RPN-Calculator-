@@ -1,0 +1,88 @@
+Name:
+utln:        
+
+Answer the questions below, and submit your answers under the assignment
+"CalcYouLater Design Checkoff" on Gradescope. You must sign up for a design
+checkoff slot with a TA to discuss your provided answers (see spec for link).
+
+Unless otherwise specified, your answers below should be *brief*: no more
+than three sentences/question.
+
+        
+1. Are you comfortable using try-catch? Mostly. Need a little bit of more 
+practice to get fully used to it.
+
+Lets say my program consists of: 
+
+funcA() {
+     throw runtime_error() 
+}
+
+funcB() {
+    workA()
+    funcA()
+    workB()
+}
+
+funcC() {
+    try {
+         funcB()
+    }
+    catch(runtime_error) {
+       workC()
+    }
+}
+
+I call funcC(). Which of the "work" functions will be called, and in what order?
+
+Answer: WorkA then WorkC because of the runtime_error from funcA
+
+2. What happens if I try to perform "+" between a string and an integer? Which
+   elements are popped off the stack and remain popped off?
+
+Answer: It would throw an error because the + needs two ints to perform. The 
+int and the string are popped off the stack.
+
+3. What does `exec` do? What does `file` do? What does `if` do?
+
+Answer: exec takes the top element on the stack (which must be a rstring) and
+processes its contents as a sequence of commands. file pops top element of stack
+which must be rstring. file content is read and proccessed like cin input. if
+pops three things. A rstring to be done if condition is false, a rsting to be 
+done if rstring is true, and a condition boolean. If condition is true, rstring
+for true will be exec, and false one will be exec if condition is false.
+
+4. How will your program interact with the user? What should happen if your
+   program encounters an error during this interaction?
+
+Answer: The program will take in inputs from the user. If there is an error, it 
+will print out the error and then keep accepting input.
+
+5. What classes will you need in your program? What are the important functions
+   and member variables that those classes will comprise? How will the classes
+   interact (i.e., which classes will be clients of others)?
+   What data structures will you use? It is okay if you use more than three
+   sentences here. Feel free to provide your answer in list form.
+
+Answer: Inplement Datum and RPNCalc. Implement Datum as a stack. RPNCalc has 
+many functions including exec, file, and if that must be implemented for it to 
+work. RPNCalc will take in Datum and use ParseString function to work. 
+Use a stack for Datum. Use an arrayList for the stack for Datum.
+
+6. There are three sources of input for processing commands: cin, files, and
+   rstrings. What C++ data type can allow you to write the same code that
+   handles commands from all three of these sources? Use istream to take in 
+   all of those. use isStringStream for rstrings to help it use istream.
+
+Answer:
+
+7. How do you plan to test your program? What evidence of testing do
+   you plan to submit? 
+
+Answer: Same as MetroSim. Slowly implement and test. Mainly test 
+how the demo functions and how mine functions and compare the two to test.
+
+8. What is your timeline for completing this project? What would you like to
+   have completed, and by which dates?        
+
+Answer: Finish week 1 stuff by Wednesday. Finish RPNCalc by Sunday.
